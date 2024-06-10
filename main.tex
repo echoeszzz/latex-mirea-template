@@ -1,0 +1,26 @@
+% !TeX program  = xelatex
+% !TeX encoding = UTF-8
+% !TeX root     = main.tex
+\documentclass{lib/mirea}
+
+\include{lib/preamble}
+
+\begin{document}
+    \include{lib/title}
+    %--- TABLE OF CONTENTS ---%
+    \tableofcontents
+
+    %--- MAIN ---%
+    \include{sections/0-intro}
+    \include{sections/1-main}
+    \include{sections/98-conclusion}
+
+    %--- BIBLIOGRAPHY ---%
+    \include{sections/99-literature}
+
+
+    %--- APPENDIX ---%
+    \appendix
+    \include{sections/99-code}
+
+\end{document}
