@@ -3,7 +3,7 @@
 % !TeX root     = main.tex
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{mirea-prog-lang}[2024]
-
+\RequirePackage{setspace}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}}
 \ProcessOptions\relax
