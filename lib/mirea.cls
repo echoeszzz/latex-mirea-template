@@ -19,7 +19,7 @@
 \RequirePackage{fontspec}
 \setmainfont{Times New Roman} % Если возникают проблемы при компиляции с данной строкой, необходимо на компьютер установить  Times New Roman
 \setmonofont{Courier New}
-\RequirePackage{newtxmath} % Поменять гарнитуру в фомулах на Times New Roman
+\RequirePackage{newtxmath} % Поменять гарнитуру в формулах на Times New Roman
 
 \RequirePackage[left=30mm, right=15mm, top=20mm, bottom=20mm]{geometry}
 
@@ -40,7 +40,7 @@
 %\RequirePackage{tocbibind} % Добавить раздел оглавление в оглавление
 
 % Настройка заголовка оглавления
-\addto\captionsrussian{\renewcommand{\contentsname}{СОДЕРЖАНИЕ}}
+\addto\captionsrussian{\renewcommand{\contentsname}{\textbf{\leftline{СОДЕРЖАНИЕ}}}}
 
 \RequirePackage[normalem]{ulem} % underline some lines
 
@@ -55,11 +55,36 @@
 \widowpenalty=10000
 %\setlength{\cftbeforesecskip}{0pt} % Addtional space between sections in toc
 
-%\setlength{\cftsecindent}{0pt} % Remove indent in toc for \section
-%\setlength{\cftsubsecindent}{0pt} % Remove indent in toc for \subsection
-%\setlength{\cftsubsubsecindent}{0pt} % Remove indent in toc for \subsubsection
+%% Уровень section
+%\setlength{\cftbeforesecskip}{0pt} % Отступ перед section
+%\setlength{\cftsecindent}{0em} % Отступ от левого края для section
+%\setlength{\cftsecnumwidth}{2.3em} % Ширина номера section
+%
+%% Уровень subsection
+%\setlength{\cftbeforesubsecskip}{0pt} % Отступ перед subsection
+%\setlength{\cftsubsecindent}{1.5em} % Отступ от левого края для subsection
+%\setlength{\cftsubsecnumwidth}{3.2em} % Ширина номера subsection
+%
+%% Уровень subsubsection
+%\setlength{\cftbeforesubsubsecskip}{0pt} % Отступ перед subsubsection
+%\setlength{\cftsubsubsecindent}{3em} % Отступ от левого края для subsubsection
+%\setlength{\cftsubsubsecnumwidth}{4.1em} % Ширина номера subsubsection
+%
+%% Уровень paragraph
+%\setlength{\cftbeforeparaskip}{0pt} % Отступ перед paragraph
+%\setlength{\cftparaindent}{4.5em} % Отступ от левого края для paragraph
+%\setlength{\cftparanumwidth}{5em} % Ширина номера paragraph
+%
+%% Уровень subparagraph
+%\setlength{\cftbeforesubparaskip}{0pt} % Отступ перед subparagraph
+%\setlength{\cftsubparaindent}{6em} % Отступ от левого края для subparagraph
+%\setlength{\cftsubparanumwidth}{6.5em} % Ширина номера subparagraph
 
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % Добавить точки у разделов в оглавлении
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftdotsep}{1} % Устанавливает расстояние между точками в оглавлении
+
 \RequirePackage{placeins} % Команда \FloatBarrier для размещения плавающего окружения в пределах раздела, подраздела, пункта
 
 % Настройка раздела, подраздела, подподраздела
@@ -70,7 +95,7 @@
 \titleformat{\subsubsection}{\FloatBarrier\fontsize{14pt}{18pt}\bfseries}{\thesubsubsection}{1em}{}
 
 % Title spacing
-\titlespacing{\chapter}{0cm}{0pt}{0pt}
+%\titlespacing{\chapter}{0cm}{0pt}{0pt}
 \titlespacing{\section}{0cm}{0pt}{10pt}
 \titlespacing{\subsection}{0cm}{15pt}{10pt}
 \titlespacing{\subsubsection}{0cm}{15pt}{10pt}
@@ -223,4 +248,4 @@
     \renewcommand*{\@biblabel}[1]{#1.\hfill} % формат нумерации списка
     \makeatother}
 
-%\setlength{\bibindent}{1.25cm} % Убрать отступы у элементов списка использованных источников + \{thebibliography}{99\kern\bibindent}
+\setlength{\bibindent}{1.25cm} % Убрать отступы у элементов списка использованных источников + \{thebibliography}{99\kern\bibindent}
